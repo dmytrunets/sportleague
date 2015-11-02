@@ -22,7 +22,7 @@ class LocationAddress
     private $id;
 
    /**
-     * @ORM\OneToOne(targetEntity="LocationRegion")
+     * @ORM\ManyToOne(targetEntity="LocationRegion")
      * @ORM\JoinColumn(name="location_region_id", referencedColumnName="id")
      */
     private $locationRegion;
@@ -34,19 +34,19 @@ class LocationAddress
      */
 
     /**
-     * @ORM\OneToOne(targetEntity="LocationCity")
+     * @ORM\ManyToOne(targetEntity="LocationCity")
      * @ORM\JoinColumn(name="location_city_id", referencedColumnName="id")
      */
     private $locationCity;
 
     /**
-     * @ORM\OneToOne(targetEntity="LocationCountry")
+     * @ORM\ManyToOne(targetEntity="LocationCountry")
      * @ORM\JoinColumn(name="location_country_id", referencedColumnName="id")
      */
     private $locationCountry;
 
     /**
-     * @ORM\OneToOne(targetEntity="Team", fetch="EAGER", inversedBy="address")
+     * @ORM\ManyToOne(targetEntity="Team", fetch="EAGER", inversedBy="address")
      */
     private $team;
 }
