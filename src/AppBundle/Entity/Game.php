@@ -29,20 +29,20 @@ class Game
     private $time;
 
     /**
-     * @ORM\OneToOne(targetEntity="Stadium")
+     * @ORM\ManyToOne(targetEntity="Stadium")
      * @ORM\JoinColumn(name="stadium_id", referencedColumnName="id")
      */
     private $stadium;
 
     /**
-     * @ORM\OneToOne(targetEntity="Team")
-     * @ORM\JoinColumn(name="organizer_team_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Team")
+     * @ORM\JoinColumn(name="organizer_team_id", referencedColumnName="id", nullable=true)
      */
     private $organizerTeam;
 
     /**
-     * @ORM\OneToOne(targetEntity="Team")
-     * @ORM\JoinColumn(name="guest_team_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Team")
+     * @ORM\JoinColumn(name="guest_team_id", referencedColumnName="id", nullable=true)
      */
     private $guestTeam;
 
@@ -54,14 +54,14 @@ class Game
     private $score;
 
     /**
-     * @ORM\OneToOne(targetEntity="Team")
-     * @ORM\JoinColumn(name="winner_team_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Team")
+     * @ORM\JoinColumn(name="winner_team_id", referencedColumnName="id", nullable=true)
      */
     private $winnerTeam;
 
     /**
-     * @ORM\OneToOne(targetEntity="Team")
-     * @ORM\JoinColumn(name="looser_team_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Team")
+     * @ORM\JoinColumn(name="looser_team_id", referencedColumnName="id", nullable=true)
      */
     private $looserTeam;
 

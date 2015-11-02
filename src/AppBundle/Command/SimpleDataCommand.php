@@ -43,6 +43,8 @@ class SimpleDataCommand extends ContainerAwareCommand
 
         $this->doctrine = $this->getContainer()->get('doctrine');
 
+        $this->addSql("SET foreign_key_checks = 0");
+
         $this->clear();
 
         $desc = array(
@@ -111,6 +113,8 @@ class SimpleDataCommand extends ContainerAwareCommand
         $this->linkedTable(
             'stadium_to_team', $desc['stadium_to_team'], self::COUNT_TEAM, self::COUNT_TEAM, self::STRATEGY_UNIQUE
         );
+
+        $this->addSql("SET foreign_key_checks = 1");
     }
 
     /**
