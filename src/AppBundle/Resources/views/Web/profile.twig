@@ -1,0 +1,29 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block content %}
+My account
+
+    My teams
+    <table>
+        {% for team in teams %}
+            <tr>
+                <td>Text</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <input type="button" value="Create team">
+
+    My games
+    <table>
+        {% for game in games %}
+        <tr>
+            <td>2015-11-03 12:00</td>
+            <td>League A</td>
+            <td>Team A -:- Team B</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

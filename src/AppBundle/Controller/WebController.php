@@ -8,14 +8,22 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class WebController extends Controller
 {
     /**
-     *@Template()
+     * @Template()
      * @Route("/test", name="homepage")
      */
     public function indexAction(Request $request)
     {
+        $data = array(
+            array('name' => 'xxxx', 'birthday' => '2013-12-12'),
+            array('name' => 'xxxx', 'birthday' => '2013-12-12'),
+            array('name' => 'xxxx', 'birthday' => '2013-12-12'),
+            array('name' => 'xxxx', 'birthday' => '2013-12-12'),
+        );
+
+        return $this->render('AppBundle:Web:profile.html.twig', array('teams' => $data, 'games' => $data));
     }
 
     /**

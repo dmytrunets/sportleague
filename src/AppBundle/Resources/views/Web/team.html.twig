@@ -1,0 +1,14 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block content %}
+    <table>
+        {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.birthday }}</td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
