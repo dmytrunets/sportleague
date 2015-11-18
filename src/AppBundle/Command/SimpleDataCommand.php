@@ -60,9 +60,11 @@ class SimpleDataCommand extends ContainerAwareCommand
                 'tournament_id'     => '%d',
                 'organizer_team_id' => '%d',
                 'guest_team_id'     => '%d',
+                'winner_team_id'    => '%d',
+                'looser_team_id'    => '%d',
                 'stadium_id'        => '%d',
                 'time'              => '2015-10-21 12:00:00',
-                'score'             => '- : -',
+                'score'             => '1 : 0',
             ),
             'stadium'            => array(
                 'location' => '50.433406, 30.521831',
@@ -137,6 +139,8 @@ class SimpleDataCommand extends ContainerAwareCommand
                             'tournament_id'     => $tournament_id,
                             'organizer_team_id' => $i,
                             'guest_team_id'     => $j,
+                            'winner_team_id'    => $i,
+                            'looser_team_id'    => $j,
                             'stadium_id'        => $i
                         );
 

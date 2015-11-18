@@ -7,5 +7,4 @@ use Doctrine\ORM\QueryBuilder;
 
 class TournamentRepository extends EntityRepository
 {
-
 } 

@@ -1,0 +1,30 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h4>Table score</h4>
+    <table class="table">
+        {% for team in teams %}
+            <tr>
+                <td><a href="{{ url('team_view', {'team_id': team.id }) }}">{{ team.name }}</a></td>
+                <td>{{ team.score }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h4>Last games</h4>
+    <table class="table">
+        {% for game in last_games %}
+            {{ include("AppBundle:Web:game_row.html.twig", { 'game': game }) }}
+        {% endfor %}
+    </table>
+
+    <h4>Next games</h4>
+    <table class="table">
+        {% for game in next_games %}
+            {{ include("AppBundle:Web:game_row.html.twig", { 'game': game }) }}
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

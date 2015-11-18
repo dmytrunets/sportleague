@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<!--[if lte IE 8 ]> <html lang="en" class="no-js oldie"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="UTF-8" />
-</head>
-<body>
-{% if app.user %}
-    <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a> | <a href="{{ path('fos_user_security_logout') }}">Logout</a>
-{% else %}
-    <a href="{{ path('fos_user_registration_register') }}">Create a new account</a>
-    |
-    <a href="{{ path('fos_user_security_login') }}">Login</a>
-{% endif %}
+{% extends "::base.html.twig" %}
 
-{% block content %}
+{% block body %}
+    {% block content %}
+
+    {% endblock %}
 {% endblock %}
-
-</body>
-</html>

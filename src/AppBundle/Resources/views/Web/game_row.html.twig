@@ -1,0 +1,9 @@
+<tr>
+    <td><a href="{{ url('game_view', {'game_id': game.id }) }}">{{ game.time|date('d.m.Y H:i') }}</a></td>
+    <td><a href="{{ url('league_view', {'league_id': game.tournament.id }) }}">{{ game.tournament.title }}</a></td>
+    <td>
+        <a href="{{ url('team_view', {'team_id': game.organizerTeam.id }) }}">{{ game.organizerTeam.name }}</a>
+        <a href="{{ url('game_view', {'game_id': game.id }) }}"> {{ game.score }} </a>
+        <a href="{{ url('team_view', {'team_id': game.guestTeam.id }) }}">{{ game.guestTeam.name }}</a>
+    </td>
+</tr>
